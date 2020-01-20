@@ -43,10 +43,13 @@ class ExtraspaceFilterTest extends BrowserTestBase {
    * {@inheritdoc}
    */
   public function testExtraspaceFilterCreate() {
+
     $assert_session = $this->assertSession();
     $page = $this->getSession()->getPage();
+
     // Create and log in our privileged user.
     $this->drupalLogin($this->drupalCreateUser(['create page content']));
+
     // Create node to edit.
     $this->drupalGet('node/add/page');
     $page->fillField('title[0][value]', 'My test node title');
